@@ -40,8 +40,10 @@ handleFilterContacts = () => {
 componentDidMount () {
   const contactsFromLocalStorage = localStorage.getItem('contacts');
   const parsedContacts = JSON.parse(contactsFromLocalStorage);
-
-  this.setState({ contacts: parsedContacts });
+  if (parsedContacts){
+    this.setState({ contacts: parsedContacts });
+  }
+  
 
 
 }
